@@ -1,0 +1,359 @@
+/* Box Model Hack */
+* {
+   box-sizing: border-box;
+}
+
+/* Clear fix hack */
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}
+
+/******************************************
+/* BASE STYLES
+/*******************************************/
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+
+}
+h2 {
+	font-size: 3rem;
+	font-weight: bold;
+	color: white;
+}
+
+h4 {
+	font-size: 1.5rem;
+	font-weight: bold;
+	color: white;
+}
+
+p {
+	color: lightgray;
+	font-size: 1.5rem;
+}
+
+span {
+	font-size: 1.5rem;
+	color: gray;
+	border-left: 2px solid red;
+	padding-left: 10px;
+}
+
+.container {
+display: grid;
+height: 100vh;
+grid-template-columns: repeat(12, 1fr);
+grid-template-rows: 0.1fr 0.15fr 1.2fr 0.15fr 1fr;
+grid-column-gap: 20px;
+grid-row-gap: 15px;
+grid-template-areas: 
+"nav nav nav nav nav nav nav nav nav nav nav nav"
+"welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome welcome"
+"left left left left left left right right right right right right"
+"break break break break break break break break break break break break "
+"one one one one two two two two three three three three"
+}
+
+
+.nav {
+	border: 1px solid black;
+	grid-area: nav;
+}
+
+.welcome {
+	grid-area: welcome;
+}
+
+.left {
+	
+	grid-area: left;
+	background-image: url("https://c.files.bbci.co.uk/6D17/production/_114372972_mediaitem114372970.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+
+}
+
+
+.right {
+	
+	grid-area: right;
+	height: 50vh;
+}
+
+.break {
+	grid-area: break;
+}
+
+.one {
+	
+	grid-area: one;
+}
+
+.two {
+	
+	grid-area: two;
+}
+
+.three {
+	
+	grid-area: three;
+}
+
+
+.nav ul {
+	display: flex;
+	justify-content: space-between;
+	list-style: none;
+}
+
+
+.right {
+	
+	display: grid;
+	grid-template-columns: 2, 1fr;
+	grid-template-rows: 2, 1fr;
+	grid-column-gap: 10px;
+	grid-row-gap: 10px;
+	grid-template-areas: 
+	"right-left right-right"
+	"right-bottom-left right-bottom-right"
+
+
+
+}
+
+.right-left {
+	background-image: url(https://images.benefitspro.com/contrib/content/uploads/sites/412/2019/03/USCanadaFists.jpg);
+	background-size: 100% 100%;
+}
+
+.right-right {
+	background-image: url(https://images.benefitspro.com/contrib/content/uploads/sites/412/2019/03/USCanadaFists.jpg);
+	background-size: 100% 100%;
+}
+
+.right-bottom-left {
+	background-image: url(https://images.benefitspro.com/contrib/content/uploads/sites/412/2019/03/USCanadaFists.jpg);
+	background-size: 100% 100%;
+}
+
+.right-bottom-right {
+	background-image: url(https://images.benefitspro.com/contrib/content/uploads/sites/412/2019/03/USCanadaFists.jpg);
+	background-size: 100% 100%;
+}
+
+
+
+.welcome {
+	display: flex;
+	justify-content: space-between;
+	padding: 0 2%;
+}
+
+.top-heading {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	padding: 4%;
+
+}
+
+
+.bottom-heading {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+
+}
+
+.bottom-text { padding: 2% 5%;
+
+}
+
+.break {
+	padding: 2%;
+}
+.photobox {
+	background: pink;
+	height: 40vh;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.photobox img {
+	width: 100%;
+	height: 100%;
+}
+
+
+/*NAV*/
+
+.nav {
+	background: black;
+
+}
+
+.nav ul a{
+	color: white;
+	text-decoration: none;
+	font-size: 1.5rem;
+}
+
+.logo {
+	
+	width: 4%;
+	margin-right: 5%;
+
+}
+.logo img {
+	width: 100%;
+	
+}
+
+.media.signin {
+	
+	
+	width: 5%;
+	margin-right: 5%;
+}
+
+.media {
+
+	
+	width: 3%;
+	margin-right: 2%;
+
+}
+
+.more {
+	width: 5%;
+}
+
+.search {
+	margin-right: 2%;
+}
+
+
+
+@media only screen and (min-width: 1600px) {
+	body {
+		width: 90%;
+		margin: 0 auto;
+	}
+}
+
+
+@media only screen and (max-width: 600px) {
+
+	html {
+		font-size: 50%;
+	}
+	.break span{
+		display: block;
+		font-size: 3rem;
+	}
+
+	.media, .welcome, .more {
+		display: none;
+	}
+
+	
+	.container {
+		grid-template-columns: 1fr;
+		grid-template-rows: 0.1fr 3fr 6fr 2fr 2fr 2fr;
+		grid-template-areas: 
+		"nav"
+		"left"
+		"right"
+		"break"
+		"one"
+		"two"
+		"three"
+	}
+
+	.right {
+		grid-template-columns: 1fr;
+		grid-template-rows: 4, 1fr;
+		grid-template-areas: 
+		"right-left"
+		"right-right"
+		"right-bottom-left"
+		"right-bottom-right"
+	}	
+
+	h4 {
+		color: black;
+	}
+
+	.logo {
+		width: 10%;
+	}
+
+	.right {
+		height: auto;
+	}
+
+
+	.right-left {
+		background-image: none;
+		border-bottom: 1px solid lightgray;
+	
+	}
+
+	.right-right {
+		background-image: none;
+		border-bottom: 1px solid lightgray;
+	}
+
+	.right-bottom-left {
+		background-image: none;
+		border-bottom: 1px solid lightgray;
+	}
+
+	.right-bottom-right {
+		background-image: none;
+		border-bottom: 1px solid lightgray;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
